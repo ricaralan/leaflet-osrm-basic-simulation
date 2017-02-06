@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rutas</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+
+        <div id="content-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 bg-white radius-bottom content-margin-top">
+                        <br>
+                        <h3 class="text-center">Mapa</h3>
+                        <form id="firstForm">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="col-md-4 col-sm-4">
+                                    <p>N&uacute;mero de clientes:</p>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <input type="number" placeholder="N&uacute;mero de clientes" class="form-control" max="100" required id="numCliente" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="col-md-4 col-sm-4">
+                                    <p>N&uacute;mero de repartidores:</p>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <input type="number" placeholder="N&uacute;mero de repartidores" class="form-control" max="30" required id="numRepartidor" />
+                                </div>
+                            </div>
+                            <div clas="col-md-12 col-sm-12">
+                                <p class="text-center hidden" id="errorContainer">*No puede haber m&aacute;s repartidores que clientes en la simulaci&oacute;n</p>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <button class="btn btn-success pull-right">Coninuar</button>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-center position-ref full-height">
+            <div id="map"></div>
+            <div id="contentInfo">
+                <div class="col-md-12">
+                    <button id="playPause" title="Pausar/Reanudar" class="glyphicon glyphicon-pause btn btn-default">
+                    <button id="reInit" title="Reiniciar" class="glyphicon glyphicon-refresh btn btn-default">
+                    </button>
+                    <h3 class="text-center">Informaci&oacute;n</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Conductor</th>
+                                    <th>Cliente m&aacute;s cercano</th>
+                                    <th>Tiempo llegada</th>
+                                    <th>Entregas</th>
+                                    <th>Distancia recorrida</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyInfo">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script src="./js/moving.marker.js"></script>
+        <script src="./js/route.js"></script>
+    </body>
+</html>
